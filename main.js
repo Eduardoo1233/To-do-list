@@ -14,7 +14,7 @@ const setLocalStorage = (dbClient) => localStorage.setItem('db_client', JSON.str
 // CRUD - DELETE
 
 const deleteClient = (index) => {
-    const dbCliente = readClient()
+    const dbClient = readClient()
     dbClient.splice(index, 1)
     setLocalStorage(dbClient)
 }
@@ -46,7 +46,7 @@ const isValidFilds = () => {
 
 const clearFields = () => {
     const fields = document.querySelectorAll('.modal-fields')
-    fields.forEach(field => field.value = "")
+    fields.forEach(field => field.value = " ")
 }
 
 const saveClient = () => {
@@ -67,7 +67,7 @@ const createRow = (client) => {
     newRow.innerHtml = `
         <td>${client.nome}</td>
         <td>${client.email}</td>
-        <td>${client.telefone}</td>
+        <td>${client.celular}</td>
         <td>${client.cidade}</td>
         <td>
             <button type="button" class="button green">editar</button>
