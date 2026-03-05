@@ -32,13 +32,13 @@ const updateClient = (index, client) => {
 const readClient = () => getLocalStorage()
 
 // CRUD - CREATE
-const creatClient = (client) => {
+const createClient = (client) => {
     const dbClient = getLocalStorage()
     dbClient.push(client)
     setLocalStorage(dbClient)
 }
 
-const isValidFilds = () => {
+const isValidFields = () => {
     return document.getElementById('form').reportValidity()
 } 
 
@@ -46,18 +46,18 @@ const isValidFilds = () => {
 
 const clearFields = () => {
     const fields = document.querySelectorAll('.modal-field')
-    fields.forEach(field => field.value = "")
+    fields.forEach(field => field.value = " ")
 }
 
 const saveClient = () => {
-    if (isValidFilds()) {
+    if (isValidFields()) {
         const client = {
             nome: document.getElementById('nome').value,
             email: document.getElementById('email').value,
             celular: document.getElementById('celular').value,
             cidade: document.getElementById('cidade').value
         }
-        creatClient(client)
+        createClient(client)
         closeModal()
     }
 }
