@@ -106,7 +106,6 @@ const fillFields = (client) => {
 
 const editClient = (index) => {
     const client = readClient()[index]
-    client.index = index
     fillFields(client)
     openModal()
 }
