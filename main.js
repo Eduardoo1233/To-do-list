@@ -46,7 +46,9 @@ const isValidFields = () => {
 
 const clearFields = () => {
     const fields = document.querySelectorAll('.modal-field')
-    fields.forEach(field => field.value ="")
+    fields.forEach(field => field.value = "")
+    document.getElementById('nome').dataset.index = 'new'
+    document.querySelector(".modal-header>h2").textContent = 'Novo Cliente'
 }
 
 const saveClient = () => {
@@ -106,7 +108,9 @@ const fillFields = (client) => {
 
 const editClient = (index) => {
     const client = readClient()[index]
+    client.index = index
     fillFields(client)
+    document.querySelector(".modal-header>h2").textContent = `Editando cliente ${client.nome}.`
     openModal()
 }
 
@@ -117,7 +121,7 @@ const editDelete = (event) => {
             editClient(index)
         } else {
             const client = readClient()[index]
-            const response = confirm (`Deseja excluir o cliente ${client.nome} ?`)
+            const response = confirm (`Deseja excluir o cliente ${client.nome}`)
             if (response) {
                 deleteClient(index)
                 updateTable()
@@ -133,3 +137,4 @@ document.getElementById('cadastrarCliente').addEventListener('click', openModal)
 document.getElementById('modalClose').addEventListener('click', closeModal)
 document.getElementById('salvar').addEventListener('click', saveClient)
 document.querySelector('#tableClient>tbody').addEventListener('click', editDelete)
+document.getElementById('cancelar').addEventListener('click', closeModal)
