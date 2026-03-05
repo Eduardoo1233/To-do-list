@@ -58,8 +58,8 @@ const saveClient = () => {
             cidade: document.getElementById('cidade').value
         }
         createClient(client)
-        closeModal()
         updateTable()
+        closeModal()
     }
 }
 
@@ -80,6 +80,7 @@ const createRow = (client) => {
 
 const clearTable = () => {
     const rows = document.querySelectorAll('#tableClient>tbody tr')
+    rows.forEach(row => row.parentNode.removeChild(row))
 }
 
 const updateTable = () => {
