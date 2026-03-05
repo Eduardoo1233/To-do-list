@@ -45,8 +45,8 @@ const isValidFilds = () => {
 // Interação com o layout
 
 const clearFields = () => {
-    const fields = document.querySelectorAll('.modal-fields')
-    fields.forEach(field => field.value = " ")
+    const fields = document.querySelectorAll('.modal-field')
+    fields.forEach(field => field.value = "")
 }
 
 const saveClient = () => {
