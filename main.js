@@ -13,7 +13,7 @@ const setLocalStorage = (dbClient) => localStorage.setItem('db_client', JSON.str
 
 // CRUD - DELETE
 
-const delete = (index) => {
+const deleteClient = (index) => {
     const dbCliente = readClient()
     dbClient.splice(index, 1)
     setLocalStorage(dbClient)
@@ -87,4 +87,4 @@ updateTable()
 // Eventos
 document.getElementById('cadastrarCliente').addEventListener('click', openModal)
 document.getElementById('modalClose').addEventListener('click', closeModal)
-document.getElementById('salvar').addEventListener('click' saveClient)
+document.getElementById('salvar').addEventListener('click', saveClient)
