@@ -57,7 +57,7 @@ const saveClient = () => {
             celular: document.getElementById('celular').value,
             cidade: document.getElementById('cidade').value
         }
-        const index = doxcument.getElementById('nome').dataset.index
+        const index = document.getElementById('nome').dataset.index
         if (index == 'new') {
             createClient(client)
             updateTable()
