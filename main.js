@@ -59,6 +59,7 @@ const saveClient = () => {
         }
         createClient(client)
         closeModal()
+        updateTable()
     }
 }
 
@@ -77,8 +78,13 @@ const createRow = (client) => {
     document.querySelector('#tableClient>tbody').appendChild(newRow)
 }
 
+const clearTable = () => {
+    const rows = document.querySelectorAll('#tableClient>tbody tr')
+}
+
 const updateTable = () => {
     const dbClient = readClient()
+    clearTable()
     dbClient.forEach(createRow)
 }
 
